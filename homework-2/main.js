@@ -162,46 +162,46 @@ function summNum() {
 
 // Task 7
 function calculator() {
-    let contin;
-    let z;
-    while (contin !== 0 || contin === null) {
+    let continueProgramm;
+    let result;
+    while (continueProgramm !== 0 || continueProgramm === null) {
         let x = +prompt('Введите первое число');
         let y = +prompt('Введите второе число');
         let sign = prompt('Введите один из предоставленных знаков: +, -, *, /');
 
         if (sign == '+') {
-            z = x + y;
+            result = x + y;
         }
         if (sign == '-') {
-            z = x - y;
+            result = x - y;
         }
         if (sign == '*') {
-            z = x * y;
+            result = x * y;
         }
         if (sign == '/') {
-            z = x / y;
+            result = x / y;
         }
         if (y === 0 && sign == '/') {
-            z = 'Деление на ноль невозможно';
+            result = 'Деление на ноль невозможно';
         }
         if (sign !== '+' && sign !== '-' && sign !== '*' && sign !== '/') {
-            z = 'Вы ввели неверный символ'
+            result = 'Вы ввели неверный символ'
         }
-        alert(z);
-        contin = +prompt('Введите подтверждение вычислений: 1 - продолжать, 0 - прекратить');
+        alert(result);
+        continueProgramm = +prompt('Введите подтверждение вычислений: 1 - продолжать, 0 - прекратить');
     }
 }
 //calculator();
 
 // Task 8
 function calcSum() {
-    let summ = 0;
+    let sum = 0;
     for (let i = 0; i <= 255; i++) {
         if (i % 2 !== 0) {
-            summ += i;
+            sum += i;
         }
     }
-    console.log(summ);
+    console.log(sum);
 }
 //calcSum();
 
@@ -232,11 +232,12 @@ function findSumm() {
 // Task 11
 function wishRiddle() {
     for (let i = 0; i < 3; i++) {
-        let userAnswer = prompt('Введите ответ');
-        if (userAnswer === 'Троллейбус') {
+        let userAnswer = prompt('Введите ответ').toLowerCase();
+           
+        if (userAnswer === 'троллейбус') {
             console.log('Правильно!');
             break;
-        } else if (userAnswer === 'Сдаюсь') {
+        } else if (userAnswer === 'сдаюсь') {
             console.log('Правильный ответ - троллейбус!');
             break;
         } else {
@@ -251,12 +252,12 @@ function wishRiddle() {
 function findSummBetweenTwoNumbers() {
     let startPoint = +prompt('Введите число начала диапазона');
     let endPoint = +prompt('Введите число конца диапазона');
-    let summ = 0;
+    let sum = 0;
     for (let i = startPoint; i <= endPoint; i++) {
         if (i % 2 !== 0) {
-            summ += i;
+            sum += i;
         }
-    } console.log(summ);
+    } console.log(sum);
 
 }
 //findSummBetweenTwoNumbers();
