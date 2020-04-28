@@ -1,0 +1,27 @@
+.btn {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, #912626, #F44336);
+    border: none;
+    transform: translateY(0px);
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    animation: button-move ease .5s;
+}
+
+@keyframes button-move {
+    from {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0px);
+
+    }
+}
