@@ -1,27 +1,28 @@
 let obj = {
-    number: 0,
+    num: +prompt('Введите число'),
+    result: false,
     checkBiggerThan0() {
-        if (this.number > 0) return true;
+        if (this.num > 0) return true;
     },
     checkLessThan1000() {
-        if (this.number < 1000) return true;
+        if (this.num < 1000) return true;
     },
-    checkNumberIsOdd() {
-        if (this.number % 2 !== 0) return true;
+    checkNumberIsOdd() {э
+        
+        if (this.num % 2 !== 0) return true;
     },
     checkDivideOf3() {
-        if (this.number % 3 === 0) return true;
+        if (this.num % 3 === 0) return true;
     },
-    validation: false
+    validation() {
+        if (this.checkBiggerThan0() && this.checkLessThan1000() && this.checkNumberIsOdd() && this.checkDivideOf3()) {
+            this.result = true;
+        }
+        return this.result;
+    }
 };
+console.log(obj.validation());
 
-
-obj.number = +prompt('Введите число');
-if (obj.checkBiggerThan0() === true && obj.checkLessThan1000() === true && obj.checkNumberIsOdd() === true && obj.checkDivideOf3() === true) {
-    obj.validation = true;
-}
-
-console.log(obj.validation);
 
 
 

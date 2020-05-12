@@ -39,8 +39,15 @@ function fillArrayWithNumbers() {
 }
 //console.log(fillArrayWithNumbers());
 
-
-
+function fillArrayWithRandomFractions() {
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        let randomNumber = Math.random() * (0 - 1) + 1;
+        arr.push(randomNumber);
+    }
+    return arr;
+}
+//console.log(fillArrayWithRandomFractions());
 
 
 function fillArrayWithRandomNumbers() {
@@ -84,15 +91,14 @@ function getSumFromArray() {
 }
 //console.log(getSumFromArray());
 
-function getSumOfSqrtFromArray() {
-    let arr = [1, 2, 3, 4, 5];
+function sumOfSquares(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
         sum += arr[i] ** 2;
     }
     return sum;
 }
-//console.log(getSumOfSqrtFromArray());
+//console.log(sumOfSquares([1, 2, 3, 4, 5]));
 
 function getAverageFromArray() {
     let arr = [1, 2, 3, 4, 5];
@@ -107,47 +113,79 @@ function getAverageFromArray() {
 //console.log(getAverageFromArray());
 
 function colonOdd(num) {
-    let num2 = +prompt('Введите многозначное число');
-    console.log(number);
-
+    let str = num.toString();
+    let result = [str[0]];
+    for (var i = 1; i < str.length; i++) {
+        if ((str[i - 1] % 2 !== 0) && (str[i] % 2 !== 0)) {
+            result.push(':', str[i]);
+        }
+        else {
+            result.push(str[i]);
+        }
+    }
+    return result.join('');
 }
-//colonOdd();
+//console.log(colonOdd(55639217));
 
-function combineArrays() {
-    let arr = [1, 6, 6, 6, 3, 3, 2, 6, 6];
- 
-   
+function getFirst(arr, n) {
+    let newArr = arr.splice(0, n);
+    return newArr;
+}
+//console.log(getFirst([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));
+
+function sumTwoArrays(arr1, arr2) {
+    let arr = [];
+    for (let i = 0; i < arr1.length; i++) {
+        arr.push(arr1[i] + arr2[i]);
+    }
+
+    return arr;
+}
+//console.log(sumTwoArrays([1, 2, 6, 3], [5, 2, 0, 3]));
+
+function union(arr1, arr2) {
+    let arr = arr1.concat(arr2);
+
     for (let i = 0; i < arr.length; i++) {
-        for (let j = i+1; j < arr.length; j++) {
-            console.log(arr[i]);
-            console.log(arr[j]);
+        for (let j = i + 1; j < arr.length; j++) {
             if (arr[i] === arr[j]) {
-                delete arr[j];
+                arr.splice(arr.indexOf(arr[i]), 1);
             }
         }
     }
- console.log(arr);
 
+    return arr;
 }
-//combineArrays();
+//console.log(union([1, 2, 6, 3], [5, 2, 0, 3]));
 
 function compareNumbers(arr) {
+    arr.sort(function (a, b) {
+        return b - a;
+    });
 
-
-    return
+    return arr;
 }
-//console.log(compareNumbers());
+//console.log(compareNumbers([1, 2, 6, 1, 3]));
 
-
-function moveElements(from,to) {
+function moveElements(from, to) {
     let arr = ['a', 'b', 'c', 'd', 'e'];
     let elem = arr.splice(from, 1);
     arr.splice(to, 0, elem);
 
     console.log(arr);
-    
+
 }
-moveElements(1, 3);
+//moveElements(1, 3);
+
+function generateNumbers(start, len) {
+    let arr = [];
+    for (let i = start; i < start + len; i++) {
+        arr.push(i);
+    }
+
+    return arr;
+}
+//console.log(generateNumbers(1,5));
 
 function addElementsToEnd() {
     let arr = ['a', 'b', 'c'];
@@ -214,11 +252,9 @@ function showElementFromObject() {
 
 function alertArray() {
     let arr = ['a', 'b', 'c'];
-    for (i = 0; i < arr.length; i++) {
-        alert(arr[i]);
-    }
+    alert(arr);
 }
-//alertArray();                ////////////////////////////////////////
+//alertArray();
 
 function alertElements2() {
     let arr = ['a', 'b', 'c'];
@@ -228,14 +264,12 @@ function alertElements2() {
 }
 //alertElements2();
 
-function alertString() {
+function rewriteArrayWithPlus() {
     let arr = ['a', 'b', 'c', 'd'];
-    let str = arr.join(',');
-
-    console.log(str.slice(0, 2));
-
+    return `${arr[0]}+${arr[1]},${arr[2]}+${arr[3]}`;
 }
-//alertString();
+//console.log(rewriteArrayWithPlus());
+
 
 function calcArrayElements() {
     let arr = [2, 5, 3, 9];
